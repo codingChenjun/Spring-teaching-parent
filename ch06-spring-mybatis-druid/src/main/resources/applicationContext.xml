@@ -25,7 +25,6 @@
 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-
     </bean>
 <!--
     这个配置用来给某一个特定的Mapper接口(dao)创建出它的实现类
@@ -40,7 +39,7 @@
     </bean>
 
 
-    <bean id="employeeService" class="com.dao.EmployeeDaoImpl">
+    <bean id="employeeService" class="com.service.impl.EmployeeServiceImpl">
         <property name="dao" ref="employeeDao"/>
 
     </bean>

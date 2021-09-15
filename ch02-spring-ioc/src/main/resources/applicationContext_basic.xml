@@ -24,7 +24,7 @@
         <!--本来这个root应该是赋值给url,但因为加了name=username
         所以就把root 赋值给了构造函数的第二个参数
         -->
-        <constructor-arg value="root" name="username"  />
+        <constructor-arg value="root" name="username"   />
         <constructor-arg value="pwd" name="password"/>
         <constructor-arg value="url.." name="url"/>
 
@@ -76,11 +76,12 @@
             </list>
         </property>
         <property name="xueLi">
-            <list>
+
+            <set>
                 <value>chu zhong</value>
                 <value>gao zhong</value>
                 <value>gao zhong</value>
-            </list>
+            </set>
         </property>
         
         <property name="xueFen">
@@ -102,6 +103,7 @@
 
             <list>
                 <ref bean="addr"/>
+
                 <bean class="inject.basic.Address">
                     <property name="city" value="ganzhou"/>
                     <property name="province" value="jiangxi"/>

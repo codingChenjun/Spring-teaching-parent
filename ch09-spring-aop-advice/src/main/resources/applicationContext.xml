@@ -24,7 +24,7 @@
 
 <bean id="logImpl" class="com.LogImpl"/>
 <bean id="logImpl2" class="com.LogImpl2"/>
-<bean id="employeeService" class="com.service.EmployeeServiceImpl"/>
+<bean id="employeeService" class="com.EmployeeServiceImpl"/>
 <aop:config>
     <!--放在这里的表达式,意味着可以被多个切面类引用-->
     <aop:pointcut id="myPointcut1" expression="execution(* com.service.EmployeeServiceImpl.*(..))"/>

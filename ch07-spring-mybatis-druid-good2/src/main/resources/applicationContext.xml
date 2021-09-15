@@ -17,7 +17,7 @@
 
 
     <bean id="employeeService"
-          class="com.dao.EmployeeDaoImpl" autowire="byType">
+          class="com.service.impl.EmployeeServiceImpl" autowire="byType">
 
     </bean>
 

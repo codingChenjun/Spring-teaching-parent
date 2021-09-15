@@ -25,7 +25,7 @@ advisor这种写法已经不推荐,主要是老版本的spring的一种配置方
     -->
 
     <bean id="myAdvisor" class="com.advisor.MyAdvisor"/>
-    <bean id="emp" class="com.dao.EmployeeDaoImpl"/>
+    <bean id="emp" class="com.service.impl.EmployeeServiceImpl"/>
     <aop:config>
 
         <aop:pointcut id="myPointcut"

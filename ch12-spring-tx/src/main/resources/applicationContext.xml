@@ -60,7 +60,7 @@
         如果你配置的事务管理器的名字就叫做transactionManager,
         那么transaction-manager就可以不用设置
     -->
-    <tx:advice id="txAdvisor" transaction-manager="txManager">
+    <tx:advice id="txAdvisor"  transaction-manager="txManager">
 
         <!--
         可以配置多个method,一般的配置,查询操作用只读事务,会优化性能

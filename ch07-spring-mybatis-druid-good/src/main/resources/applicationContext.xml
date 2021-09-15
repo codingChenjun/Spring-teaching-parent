@@ -57,7 +57,7 @@ classpath*:com/dao/**/*mapper.xml
 
     <mybatis:scan base-package="com.dao"/>
 
-    <bean id="employeeService" class="com.dao.EmployeeDaoImpl" autowire="byType"/>
+    <bean id="employeeService" class="com.service.impl.EmployeeServiceImpl" autowire="byType"/>
 
 
 

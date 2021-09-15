@@ -51,8 +51,7 @@ beans上的default-autowire-candidates =设置作为候选baen的名字模式
     <bean id="dao" class="autowire.UserDaoImpl" ></bean>
     <bean id="userDao2" class="autowire.UserDaoImpl2"  ></bean>
     <bean id="userService"
-          class="autowire.UserServiceImpl"
-          >
+          class="autowire.UserServiceImpl"  >
 
     </bean>
 

@@ -29,7 +29,10 @@ public class ChildOne {
     public String getChildOne() {
         return childOne;
     }
+    public void setChildOne(String childOne) {
 
+        this.childOne = childOne;
+    }
     @Override
     public String toString() {
         return "ChildOne{" +
@@ -37,8 +40,5 @@ public class ChildOne {
                 '}' + "parent: " + super.toString();
     }
 
-    public void setChildOne(String childOne) {
 
-        this.childOne = childOne;
-    }
 }

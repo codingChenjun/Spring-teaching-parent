@@ -15,7 +15,7 @@ import java.util.Map;
  * @author cj
  * @date 2019/11/4
  */
-@Service
+@Service()
 @Scope("singleton")
 
 

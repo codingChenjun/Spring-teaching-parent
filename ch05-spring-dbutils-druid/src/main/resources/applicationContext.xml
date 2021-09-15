@@ -22,7 +22,7 @@
     <bean id="employeeDao" class="com.dao.impl.EmployeeDaoImpl">
         <property name="queryRunner" ref="queryRunner"/>
     </bean>
-    <bean id="employeeService" class="com.dao.EmployeeDaoImpl">
+    <bean id="employeeService" class="com.service.impl.EmployeeServiceImpl">
         <property name="dao" ref="employeeDao"/>
     </bean>
 </beans>

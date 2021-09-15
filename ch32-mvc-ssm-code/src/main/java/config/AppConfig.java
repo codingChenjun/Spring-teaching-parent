@@ -77,7 +77,6 @@ public class AppConfig {
         properties.put("supportMethodsArguments", "true");
         properties.put("reasonable", "true");
         pageInterceptor.setProperties(properties);
-
         return  pageInterceptor;
     }
 

@@ -10,7 +10,7 @@ import java.util.Set;
  * @author cj
  * @date 2019/11/22
  */
-@HandlesTypes(MyAppInitializer.class)
+@HandlesTypes({MyAppInitializer.class})
 public class MyServletContainerInit implements ServletContainerInitializer {
     @Override
     public void onStartup(Set<Class<?>> clazzes, ServletContext ctx) throws ServletException {
@@ -19,6 +19,7 @@ public class MyServletContainerInit implements ServletContainerInitializer {
                ctx.addServlet("first", new FirstServlet());
 
         servletRegistration.addMapping("/first");*/
+
 
         for (Class<?> clz : clazzes) {
             //就是判断传递过来的类型是否是MyAppInitializer的实现类

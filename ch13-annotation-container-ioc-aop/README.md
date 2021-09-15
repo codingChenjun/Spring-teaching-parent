@@ -1,6 +1,6 @@
 # 容器
 1.xml:component-scan
-2 Controller,Service,Repository,Componet
+2 Controller,Service,Repository,Component
 3.PostConstruct,PreDestroy
 4.Scope
 

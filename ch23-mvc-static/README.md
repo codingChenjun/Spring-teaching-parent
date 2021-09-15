@@ -54,7 +54,7 @@
 只需要在DispatcherServlet关联的spring元数据中配置下面的内容即可
 
 ```xml
-<mvc:default-servlet-handler />
+<mvc:default-servlet-handler  />
 ```
 如果容器的默认servlet的名字不叫default,那么就设定default-servlet-name属性的值为对应容器的
 servlet名字即可.

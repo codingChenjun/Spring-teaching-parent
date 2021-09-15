@@ -2,6 +2,7 @@ package com.entity;
 
 import com.custom.NotRegister;
 
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -11,7 +12,7 @@ import java.util.Date;
  */
 public class EmpEntity {
     private Integer id;
-    //@Size(min=2,max = 8,message = "2-8zhi jian")
+    @Size(min=2,max = 8,message = "2-8zhi jian")
 
     @NotRegister
 
