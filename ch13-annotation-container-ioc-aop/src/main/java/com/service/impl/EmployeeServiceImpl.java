@@ -20,7 +20,8 @@ import java.util.Map;
 
 
 public class EmployeeServiceImpl implements EmployeeService {
-
+    public EmployeeServiceImpl() {
+    }
 
     /**
      * 从spring 4.3之后,如果构造函数只有一个,spring

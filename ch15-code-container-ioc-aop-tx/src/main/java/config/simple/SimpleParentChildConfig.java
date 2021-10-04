@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * 这不是上课要讲的案例,主要是测试注册同样的Bean时,@Bean修饰的方法的重载问题
  * @author cj
  * @date 2019/11/5
  */

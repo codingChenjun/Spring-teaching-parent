@@ -9,7 +9,7 @@
 https://blog.csdn.net/ABCD898989/article/details/50809321
 
 https://juejin.im/entry/5b9f69266fb9a05cfb3da610 有切点表达式源码解析
-spring aop只针对方法进行aop代理,不想aspectj联盟搞的aop实现
+spring aop只针对方法进行aop代理,不像aspectj联盟搞的aop实现
 这个aop联盟的实现功能比spring aop要强大,比如可以针对字段进行
 切面编程.
 
@@ -40,7 +40,7 @@ is an instance of the given type.
  指示特定bean的名字的指示器
 
 注意:@Inherited修饰的注解修饰在接口上,是不会被此接口的实现类所继承的,只有注解修饰在父类
-上才会被继承
+上才会被继承(在@Inherited注解的注释上有详细的说明)
 
 2 指示器的逻辑运算符
 并且:and(&&)

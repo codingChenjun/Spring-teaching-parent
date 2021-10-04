@@ -3,6 +3,7 @@ package com;
 import com.service.impl.CalcServiceImpl;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -45,5 +46,13 @@ public class AopTest {
         System.out.println(result);
     }
 
+    @Test
+    public void testAnnoAopWithoutXml(){
+        ApplicationContext context = new AnnotationConfigApplicationContext("com");
+
+        CalcServiceImpl calcService = context.getBean(CalcServiceImpl.class);
+        int result = calcService.add(5, 6);
+        System.out.println(result);
+    }
 
 }

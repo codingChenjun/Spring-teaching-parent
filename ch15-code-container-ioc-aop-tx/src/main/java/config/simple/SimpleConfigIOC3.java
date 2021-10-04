@@ -21,9 +21,7 @@ public class SimpleConfigIOC3 {
     }
 
     /**
-     * 利用autowire来实现注入
-     * 理论是Configuration修饰的类除了是个配置类,它本身也是一个被
-     * spring管理的类,所以可以注入东西
+     * 通过调用同一个配置类中的其它@Bean修饰的方法来完成注入
      *
      */
     @Bean

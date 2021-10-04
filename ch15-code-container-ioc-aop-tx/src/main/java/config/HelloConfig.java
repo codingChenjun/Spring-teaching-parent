@@ -23,7 +23,8 @@ import org.springframework.context.annotation.Configuration;
  * bean方法:用Bean注解修饰的方法
  *
  * bean方法可以出现在配置类里面,也可以出现在普通类里面
- * 第一种称之为full模式,第二种情况称之为lite模式.
+ * 第一种称之为full模式,第二种情况称之为lite模式.(参考https://juejin.cn/post/6881528714715201549)
+ *
  *
  *
  * @author cj
@@ -52,7 +53,7 @@ public class HelloConfig {
     @Bean()
     public EmployeeServiceImpl employeeService(EmployeeDao dao){
         EmployeeServiceImpl service =  new EmployeeServiceImpl();
-        //调用employeeDaoImpl等价于context.getBean()
+        //调用employeeDaoImpl方法等价于context.getBean()
        // service.setDao(employeDaoImpl());
         service.setDao(dao);
         return  service;
