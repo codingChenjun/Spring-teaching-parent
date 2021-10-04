@@ -25,6 +25,7 @@ import org.springframework.context.annotation.Configuration;
  * bean方法可以出现在配置类里面,也可以出现在普通类里面
  * 第一种称之为full模式,第二种情况称之为lite模式.(参考https://juejin.cn/post/6881528714715201549)
  *
+ * 3. 讲解Configuration的proxyBeanMethods属性的含义
  *
  *
  * @author cj
