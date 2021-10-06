@@ -1,8 +1,6 @@
 package config;
 
-import com.dao.EmployeeDao;
 import com.dao.impl.EmployeDaoImpl;
-import com.service.impl.EmployeeServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -31,43 +29,37 @@ import org.springframework.context.annotation.Configuration;
  * @author cj
  * @date 2019/11/5
  */
-@Configuration
+@Configuration(proxyBeanMethods = false)
 public class HelloConfig {
-/*    @Autowired
-    private EmployeeDao dao;*/
+
+    public HelloConfig() {
+        System.out.println("---helloconfig 构造函数---");
+    }
+
     /**
      * 加了Bean注解的方式,其作用是用来往spring中注册bean的
      *  没有指定Scope,默认就是单例
      *
-     *  bean方法,如果放在@Configuration修饰的类中,那么此类会被动态代理
-     *  也就是说bean方法已经被动态代理了.
+     *  bean方法,如果放在@Configuration修饰的类中,那么此配置类默认会被动态代理
+     *  这样就支持bean间(inter-bean)方法调用了.
+     *
      *  代理之后的方法的运行逻辑是这样:
      *  1.检查当前spring容器中有没有这个bean已经注册,
      *  没有就调用这个bean方法,有就直接返回,什么都不干.
+     *
+     *  当把Configuration注解的proxyBeanMethods设置为true时,配置类会被代理
+     *  设置为true时Bean方法不能是private以及final修饰的
+     *
+     *  如果要配置BFPP,那么就用静态的bean方法即可,BPP正常注册
      * @return
      */
     @Bean
-    public EmployeDaoImpl employeDaoImpl(){
+    public  EmployeDaoImpl employeDaoImpl(){
+        System.out.println("注册EmployeeDaoImpl---");
         return new EmployeDaoImpl();
     }
 
-    @Bean()
-    public EmployeeServiceImpl employeeService(EmployeeDao dao){
-        EmployeeServiceImpl service =  new EmployeeServiceImpl();
-        //调用employeeDaoImpl方法等价于context.getBean()
-       // service.setDao(employeDaoImpl());
-        service.setDao(dao);
-        return  service;
-    }
 
-
-    /*@Bean
-    public EmployeeServiceImpl2 employeeServiceImpl2(){
-        EmployeeServiceImpl2 employeeServiceImpl2 = new EmployeeServiceImpl2();
-        employeeServiceImpl2.setDao(employeDaoImpl());
-        return  employeeServiceImpl2;
-    }
-*/
 
     @Configuration
     static  class MyInnerConfig {

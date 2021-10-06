@@ -15,7 +15,7 @@ import java.io.IOException;
 public class PutServletTest extends HttpServlet {
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getMe
+
         System.out.println("put----");
         String value = req.getParameter("a");
         System.out.println("-----put debug: value = " + value);
