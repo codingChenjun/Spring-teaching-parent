@@ -50,6 +50,17 @@ public class MvcConfig implements WebMvcConfigurer {
         interceptorRegistry.addPathPatterns("/**");
     }
 
+    /**
+     *   // 这个配置通常也是用来处理静态资源用的,这种方法可以与上面的方法混用,但推荐用上面的方法
+     *   它会注册一个RequestMapping,并且优先级是最低的(Integer.maxValue)
+     * @param configurer
+     */
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();//表示默认servlet名字spring知道,不需要指定,一般是default
+//        configurer.enable("默认servlet的名字");//spring不知道servlet容器的默认servlet名字时用这个重载
+    }
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         ResourceHandlerRegistration registration
@@ -58,7 +69,7 @@ public class MvcConfig implements WebMvcConfigurer {
     }
 
     /**
-     * 这里添加的转换器会不会添加默认转换器,
+     * 这里添加的转换器是不会添加默认转换器的,
      * 如果想在保留默认转换器的情况下添加消息转换器,可以重写extendMessageConverters方法
      * @param converters
      */

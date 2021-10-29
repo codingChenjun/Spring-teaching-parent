@@ -50,7 +50,7 @@ ant:
 
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            <mvc:exclude-mapping path="/login"/>
+            <mvc:exclude-mapping path="/login" />
             <mvc:exclude-mapping path="/index"/>
 
             <bean class="com.controller.AuthenticationInterceptor"/>

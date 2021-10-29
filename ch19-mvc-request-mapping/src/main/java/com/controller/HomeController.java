@@ -28,10 +28,11 @@ public class HomeController {
      * 英文fallback(备胎)
      * @return
      */
-    @RequestMapping("*")
+/*    @RequestMapping("*")
     public String index3(){
+        System.out.println("******------");
         return "index";
-    }
+    }*/
 
     @RequestMapping(value = {"/index","index3"})
     public String index4(){

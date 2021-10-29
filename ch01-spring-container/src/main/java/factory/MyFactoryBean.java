@@ -13,6 +13,7 @@ public class MyFactoryBean implements FactoryBean<A> {
      * @throws Exception
      */
     public A getObject() throws Exception {
+        System.out.println("MyFactoryBean getObject方法被调用---");
         return new A();
     }
 

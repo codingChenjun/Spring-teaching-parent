@@ -17,7 +17,7 @@ id的值必须配置并且必须是multipartResolver
 方法二:(推荐的方法.这种方法是利用servlet 3.0的方式,所以你的tomcat必须支持servlet 3.0)
 1.配置DispatcherServlet的文件上传部分
 2.配置解析器类型为StandardServletMultipartResolver,
-id的值必须配置并且必须是multipartResolver(这个配置是可选的,可以不用配置)
+id的值必须配置并且必须是multipartResolver
 3. 不需要添加commons的依赖
 
 > 可以不用配置StandardServletMultipartResolver的原因是RequestParamMethodArgumentResolver
