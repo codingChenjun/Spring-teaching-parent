@@ -16,6 +16,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * @author cj
@@ -35,11 +37,14 @@ public class FileController {
     public String upload(MultipartFile myfile){
 
         //得到上传过来的文件名,一般要改名,比如用UUID
-        String filename = myfile.getOriginalFilename();
+        // 不要用File,要用Path,否则jetty容器会报异常
+   /*     String filename = myfile.getOriginalFilename();
         String path = FILE_DIRECTORY + File.separator + filename;
-        File file = new File(path);
+        File file = new File(path);*/
+        Path path = Paths.get(FILE_DIRECTORY, myfile.getOriginalFilename());
         try {
-            myfile.transferTo(file);
+//            myfile.transferTo(file);
+            myfile.transferTo(path);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -2,7 +2,7 @@
 ## 页面:
 1.post提交
 2.enctype:multipart/form-data
-
+3. 传递给transferTo方法的参数用Path而不要用File,因为用file在jetty中会报异常
 ## 服务端
 方法一:
 1.添加apache commons依赖
@@ -16,8 +16,23 @@ id的值必须配置并且必须是multipartResolver
 
 方法二:(推荐的方法.这种方法是利用servlet 3.0的方式,所以你的tomcat必须支持servlet 3.0)
 1.配置DispatcherServlet的文件上传部分
-2.配置解析器类型为StandardServletMultipartResolver,
-id的值必须配置并且必须是multipartResolver
+2.配置解析器类型为StandardServletMultipartResolver, id的值必须配置并且必须是multipartResolver
+如果是MultipartFile类型作为控制器方法的参数,那么此MultipartResolver是可以不用配置的,但如果把此类型作为一个类的
+字段类型,并且把此类型作为控制器方法的参数,那么就必须配置这个bean了
+
+```java
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class FileVO {
+ private MultipartFile myfile;
+ private String name;
+}
+
+@RequestMapping
+public String index(FileVO fileVO){
+  return "index";
+}
+```
 3. 不需要添加commons的依赖
 
 > 可以不用配置StandardServletMultipartResolver的原因是RequestParamMethodArgumentResolver

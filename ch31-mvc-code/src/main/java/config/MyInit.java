@@ -23,6 +23,6 @@ public class MyInit implements WebApplicationInitializer {
       ServletRegistration.Dynamic servletRegistration=
               servletContext.addServlet("asdf", dispatcherServlet);
         servletRegistration.addMapping("/");
-
     }
+
 }
